@@ -19,7 +19,15 @@ Komputasi awan adalah paradigma di mana informasi secara permanen tersimpan di s
 **Analogi Pemahaman:**
 Untuk memahami komputasi awan secara intuitif, dapat digunakan analogi **layanan listrik**. Sebelum era listrik, setiap pabrik harus memiliki generator sendiri. Setelah jaringan listrik hadir, pabrik cukup "menyambung" dan membayar berdasarkan pemakaian. Demikian pula dengan komputasi awan: organisasi tidak perlu memiliki pusat data sendiri, cukup "menyambung" ke penyedia cloud dan membayar sesuai sumber daya yang dikonsumsi.
 
-### 1.2 Karakteristik Esensial Komputasi Awan (Lengkap dengan Penjelasan)
+### 1.2 Arsitektur Komputasi Awan
+Arsitektur komputasi awan secara fundamental terdiri dari dua bagian utama :
+
+- Front End: Bagian yang dilihat dan diinteraksikan oleh pengguna (klien). Ini mencakup perangkat klien (komputer, laptop, ponsel) dan aplikasi antarmuka (seperti web browser) yang digunakan untuk mengakses platform komputasi awan.
+
+- Back End: Bagian "awan" itu sendiri yang dikelola oleh penyedia layanan. Ini adalah infrastruktur besar yang mencakup server, sistem penyimpanan data, mesin virtual, mekanisme keamanan, dan sistem manajemen lalu lintas. Kedua bagian ini terhubung dan berkomunikasi melalui jaringan internet 
+
+
+### 1.3 Karakteristik Esensial Komputasi Awan 
 
 Berdasarkan standar NIST SP 800-145, terdapat lima karakteristik esensial yang harus dimiliki oleh sebuah sistem komputasi awan:
 
@@ -47,12 +55,12 @@ Berdasarkan standar NIST SP 800-145, terdapat lima karakteristik esensial yang h
 - **Mekanisme:** Penggunaan sumber daya dapat dipantau, dikendalikan, dan dilaporkan, memberikan transparansi baik bagi penyedia maupun pengguna layanan.
 - **Contoh:** Pengguna AWS dapat melihat dashboard yang menunjukkan secara detail berapa jam EC2 yang telah digunakan, berapa GB penyimpanan S3 yang terpakai, dan berapa biaya yang harus dibayarkan bulan ini.
 
-### 1.3 Model Layanan Komputasi Awan (Service Models)
+### 1.4 Model Layanan Komputasi Awan (Service Models)
 
 Dalam arsitektur komputasi awan, dikenal tiga model layanan utama yang membagi tanggung jawab antara penyedia dan pengguna.
 
 **A. Infrastructure as a Service (IaaS)**
-- **Pengertian:** Model layanan yang menyediakan infrastruktur komputasi dasar seperti kemampuan pemrosesan, penyimpanan, dan jaringan. Pengguna dapat menyebarkan dan menjalankan perangkat lunak apa pun, termasuk sistem operasi dan aplikasi.
+- **Pengertian:** Model layanan yang menyediakan infrastruktur komputasi dasar seperti kemampuan pemrosesan, penyimpanan, dan jaringan. Pengguna dapat menyebarkan dan menjalankan perangkat lunak apa pun, termasuk sistem operasi, data, dan aplikasi.
 - **Tanggung Jawab Pengguna:** Mengelola sistem operasi, penyimpanan, aplikasi yang digunakan, dan mungkin juga komponen jaringan tertentu.
 - **Tanggung Jawab Penyedia:** Mengelola infrastruktur virtualisasi, server fisik, jaringan, dan penyimpanan.
 - **Contoh:** Amazon EC2, Google Compute Engine, Microsoft Azure Virtual Machines.
@@ -66,25 +74,25 @@ Dalam arsitektur komputasi awan, dikenal tiga model layanan utama yang membagi t
 - **Skenario Penggunaan:** Tim pengembang yang ingin fokus pada penulisan kode tanpa memusingkan provisioning server, patching sistem operasi, atau manajemen skala.
 
 **C. Software as a Service (SaaS)**
-- **Pengertian:** Model layanan di mana pengguna dapat menggunakan aplikasi penyedia yang berjalan di infrastruktur cloud. Aplikasi dapat diakses dari berbagai perangkat klien melalui antarmuka klien seperti web browser.
+- **Pengertian:** Menyediakan perangkat lunak aplikasi jadi melalui internet, biasanya dengan basis berlangganan. Pengguna tidak perlu menginstal, mengelola, atau memelihara perangkat lunak, semuanya dikelola oleh penyedia 
 - **Tanggung Jawab Pengguna:** Hanya pada konfigurasi spesifik aplikasi dan data pengguna.
 - **Tanggung Jawab Penyedia:** Seluruh tumpukan teknologi, termasuk infrastruktur, sistem operasi, aplikasi, dan keamanan.
 - **Contoh:** Google Workspace (Gmail, Google Docs), Microsoft 365, Salesforce, Dropbox.
 - **Skenario Penggunaan:** Perusahaan yang ingin menggunakan perangkat lunak siap pakai tanpa instalasi dan pemeliharaan.
 
-### 1.4 Model Deployment (Model Penempatan)
+### 1.5 Model Deployment (Model Penempatan)
 
 Model deployment menjelaskan bagaimana infrastruktur cloud diorganisasikan berdasarkan kepemilikan, ukuran, dan akses.
 
 **1. Public Cloud (Cloud Publik)**
-- **Pengertian:** Infrastruktur cloud disediakan untuk penggunaan umum oleh publik. Cloud ini dimiliki, dikelola, dan dioperasikan oleh organisasi penyedia cloud (vendor).
+- **Pengertian:**  Infrastruktur dimiliki dan dioperasikan oleh penyedia layanan awan pihak ketiga. Sumber daya, seperti server dan penyimpanan, dibagi bersama oleh banyak organisasi atau penyewa (multi-tenancy) dan diakses melalui internet. 
 - **Karakteristik:** Model *multi-tenant*, biaya lebih rendah, skalabilitas tak terbatas, dan tidak memerlukan investasi awal.
 - **Contoh:** Amazon Web Services, Microsoft Azure, Google Cloud Platform.
 - **Kelebihan:** Ekonomis, tidak perlu memelihara infrastruktur.
 - **Kekurangan:** Kontrol terbatas, potensi masalah kepatuhan untuk industri tertentu.
 
 **2. Private Cloud (Cloud Privat)**
-- **Pengertian:** Infrastruktur cloud diprovisikan untuk penggunaan eksklusif oleh satu organisasi yang terdiri dari banyak pengguna. Cloud ini mungkin dimiliki, dikelola, dan dioperasikan oleh organisasi itu sendiri, pihak ketiga, atau kombinasi keduanya.
+- **Pengertian:**  Infrastruktur awan dioperasikan secara eksklusif untuk satu organisasi. Awan ini dapat dikelola oleh organisasi itu sendiri atau pihak ketiga, dan dapat dihosting di dalam (on-premises) atau di luar lokasi. Biasanya dipilih karena persyaratan keamanan, tata kelola, atau kepatuhan yang ketat 
 - **Karakteristik:** Infrastruktur *dedicated*, keamanan lebih tinggi, kontrol penuh, dapat berlokasi *on-premise* atau di fasilitas penyedia.
 - **Contoh:** OpenStack yang diimplementasikan di pusat data perusahaan, VMware vSphere untuk enterprise.
 - **Kelebihan:** Kontrol penuh, keamanan tinggi, cocok untuk data sensitif.
