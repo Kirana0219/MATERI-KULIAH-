@@ -1,0 +1,2 @@
+# FUNCTION
+Function merupakan 
